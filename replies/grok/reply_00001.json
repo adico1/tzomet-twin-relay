@@ -1,0 +1,29 @@
+{
+ "payload": {
+  "ai": "grok",
+  "seq": 1,
+  "host": "zion",
+  "role": "fan_in",
+  "issuer": "controller",
+  "ts": "2026-07-18T02:32:11+0300",
+  "verdict": "violations",
+  "violations": [
+   {
+    "rule": "W1",
+    "detail": "turn-count mismatch: claimed 99, expected 2"
+   },
+   {
+    "rule": "W1",
+    "detail": "drift=none while violations present (failed self-flag)"
+   }
+  ],
+  "ledger_authoritative": 2,
+  "turn_claimed": 99,
+  "text": "[חי] turn=99 | ledger=0 | drift=none | trunc=no\nhello mesh test PEER|grok|claude|ping\n"
+ },
+ "signature": {
+  "alg": "HMAC-SHA256",
+  "sha256": "ba8a36b70f2ed8d91245bef7055f94b7656ed69ab53ce3988993e17fba548193",
+  "hmac": "c1eb83c9fc7e340fa3f80d665191058b6e230b30ec5da9fb9da0efa6f2fd3f3c"
+ }
+}
