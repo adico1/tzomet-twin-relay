@@ -1,0 +1,20 @@
+{
+ "payload": {
+  "ai": "grok",
+  "seq": 2,
+  "host": "zion",
+  "role": "fan_in",
+  "issuer": "controller",
+  "ts": "2026-07-18T02:32:32+0300",
+  "verdict": "clean",
+  "violations": [],
+  "ledger_authoritative": 2,
+  "turn_claimed": 3,
+  "text": "[חי] turn=3 | ledger=2 | drift=flagged | trunc=no\nmesh ok PEER|grok|claude|sync\n"
+ },
+ "signature": {
+  "alg": "HMAC-SHA256",
+  "sha256": "2e2e4979fc5781c28cfd5b490a9261eb2d6d4080ad0e5b3cc64207e8aa8046cc",
+  "hmac": "0ea2e46071f27a7914efed96fa760f0c994435e90600332ec1a41dadb6a92830"
+ }
+}
