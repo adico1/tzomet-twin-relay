@@ -1,0 +1,1 @@
+{"payload":{"ai":"all","host":"zion","issuer":"mekria","role":"backward_comm","seq":1,"src":"m1.txt","text":"relay test 1","ts":"2026-07-17T21:16:54Z"},"signature":{"alg":"HMAC-SHA256","sha256":"402eb1b0b6a280785c5289b24c6bd9567ebc0dd03c4e0a5f3d872be546e54406","sig":"ed52b1ab549629cff36a5349f42972ccf3938c9df4ae7d83fa2d688fcca07e5b"}}
