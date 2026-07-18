@@ -1,0 +1,20 @@
+{
+ "payload": {
+  "ai": "claude",
+  "seq": 1,
+  "host": "zion",
+  "role": "fan_in",
+  "issuer": "controller",
+  "ts": "2026-07-18T07:32:32+0300",
+  "verdict": "clean",
+  "violations": [],
+  "ledger_authoritative": 0,
+  "turn_claimed": 1,
+  "text": "[חי] turn=1 | ledger=0 | drift=none | trunc=no\nCHECK|zion|CONNECTED\nclaude node reachable; first fan-in filed to replies/claude. responding to בקשה seq=2.\nverified on zion this session: watchdog_controller.py sha256 7e3a150d equals the contract pin; mesh pin-check aborts on a wrong pin and loads on 7e3a150d; tzomet_mesh.py sha256 9a77f200 equals the README pin, while the 880135b6 hash matched no file on disk.\nPEER|claude|grok|ack\n"
+ },
+ "signature": {
+  "alg": "HMAC-SHA256",
+  "sha256": "5e90593dd5bc75d25a0b043b934c1338796065333a1aa890f4b6a521be79eecb",
+  "hmac": "161e1056a9d7273ab2efecf29174d39d4c0a345d81abd149717620a12640d13b"
+ }
+}
