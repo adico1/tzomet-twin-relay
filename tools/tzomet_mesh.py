@@ -9,7 +9,9 @@ Does not hold AI judgment; only filesystem + git + controller.cmd_*.
 Usage:
   python3 tzomet_mesh.py --repo ~/tzomet_twin_relay_repo \\
     --controller ~/tzomet_twin_relay_repo/tools/watchdog_controller.py \\
-    --pin 7e3a150df7116296051521ba092a35b802e3f9850105acfdcaf9955fa2b20b07
+    --pin 7e3a150df7116296051521ba092a35b802e3f9850105acfdcaf9955fa2b20b07 \\
+    --relay ~/tzomet_twin_relay_repo/tools/tzomet_twin_relay.py \\
+    --relay-pin 8abf3bbefa4b14f076209824868b3b33ec25a0512ca02ae5d698414726d4519d
 
   python3 tzomet_mesh.py ... --once          # process queues and exit
   python3 tzomet_mesh.py ... --auto-fix    # also write fixes/ (delivery still manual
@@ -36,6 +38,7 @@ from pathlib import Path
 HOME = Path.home()
 DEFAULT_BUS = HOME / "tzomet_bus"
 DEFAULT_AIS = ("grok", "claude", "gemini")
+DEFAULT_RELAY_MODULE = HOME / "tzomet_twin_relay_repo" / "tools" / "tzomet_twin_relay.py"
 PEER_RE = re.compile(r"^PEER\|([a-z0-9_]+)\|([a-z0-9_]+)\|(.*)$", re.I | re.M)
 HEADER_RE = re.compile(r"\[חי\]\s*turn=(\d+)", re.I)
 
@@ -65,20 +68,27 @@ def load_controller(path: Path, pin: str):
     return mod
 
 
-def load_twin_relay():
-    candidates = [
-        HOME / "Projects" / "tzomet_twin_relay.py",
-        HOME / "tzomet_twin_relay_repo" / "tools" / "tzomet_twin_relay.py",
-    ]
-    for p in candidates:
-        if p.is_file():
-            spec = importlib.util.spec_from_file_location("tzomet_twin_relay", p)
-            mod = importlib.util.module_from_spec(spec)
-            assert spec.loader
-            spec.loader.exec_module(mod)
-            return mod, p
-    print("CHECK|mesh|WARN|no_twin_relay_module", flush=True)
-    return None, None
+def load_twin_relay(path: Path, pin: str):
+    canonical_path = path.expanduser().resolve()
+    if not canonical_path.is_file():
+        raise SystemExit(f"CHECK|mesh|ABORT|no_twin_relay|{canonical_path}")
+    got = sha256_file(canonical_path)
+    if got != pin:
+        print(
+            f"CHECK|mesh|ABORT|relay_pin_mismatch|expected={pin}|got={got}",
+            flush=True,
+        )
+        raise SystemExit(2)
+    spec = importlib.util.spec_from_file_location("tzomet_twin_relay", canonical_path)
+    if spec is None or spec.loader is None:
+        raise SystemExit("CHECK|mesh|ABORT|relay_load")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    print(
+        f"CHECK|mesh|TWIN|path={canonical_path}|sha256={got}|ok",
+        flush=True,
+    )
+    return mod, canonical_path
 
 
 def ensure_layout(bus: Path, ais: tuple[str, ...]) -> None:
@@ -213,6 +223,8 @@ def run_loop(args) -> int:
     repo = Path(args.repo).expanduser().resolve()
     ctrl_path = Path(args.controller).expanduser().resolve()
     pin = args.pin.strip()
+    relay_path = Path(args.relay).expanduser().resolve()
+    relay_pin = args.relay_pin.strip()
     bus = Path(args.bus).expanduser().resolve()
     ais = tuple(a.strip() for a in args.ais.split(",") if a.strip())
 
@@ -229,9 +241,7 @@ def run_loop(args) -> int:
 
     os.environ.setdefault("WATCHDOG_STATE", str(bus / "watchdog_state"))
     ctrl = load_controller(ctrl_path, pin)
-    twin_mod, twin_path = load_twin_relay()
-    if twin_path:
-        print(f"CHECK|mesh|TWIN|{twin_path}", flush=True)
+    twin_mod, _ = load_twin_relay(relay_path, relay_pin)
 
     print(
         f"CHECK|mesh|UP|repo={repo}|bus={bus}|ais={','.join(ais)}|auto_fix={args.auto_fix}",
@@ -270,6 +280,16 @@ def main() -> None:
         "--pin",
         required=True,
         help="expected sha256 of controller (abort on mismatch)",
+    )
+    ap.add_argument(
+        "--relay",
+        default=str(DEFAULT_RELAY_MODULE),
+        help="canonical path to tools/tzomet_twin_relay.py",
+    )
+    ap.add_argument(
+        "--relay-pin",
+        required=True,
+        help="expected sha256 of twin relay (abort on mismatch)",
     )
     ap.add_argument("--bus", default=str(DEFAULT_BUS))
     ap.add_argument("--ais", default=",".join(DEFAULT_AIS))
