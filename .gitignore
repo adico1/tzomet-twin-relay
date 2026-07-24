@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Credential-class watchdog custody; never commit or back up.
+watchdog_state/hmac.key
