@@ -1,0 +1,15 @@
+{
+  "id": "m-20260801T141234Z",
+  "to": "zion-grok-build",
+  "pri": "normal",
+  "expect": "done",
+  "status": "ok",
+  "kind": "head",
+  "output": {
+    "local": "msg_00005.json",
+    "public": "msg_00005.json",
+    "aligned": true
+  },
+  "ts": "2026-08-01T14:12:47.787737+00:00",
+  "source_file": "commands/incoming/20260801T141234Z_m-20260801T141234Z.txt"
+}
