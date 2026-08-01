@@ -1,186 +1,20 @@
 {
-  "digest": "f76225cc9a2dd9bc10301fea94e088d6c80d19163694f10cc83a20ecde44ba24",
+  "digest": "cb291805137df7b3f95525c98b66c0a134f2842aa1b5280e9c00ef3773ce6cbf",
   "executor": "tzomet_zion_get",
   "host": "zion",
-  "in_reply_to": "ping-20260801T221131Z",
+  "in_reply_to": "ping-20260801T221149Z",
   "kind": "zion_ack",
-  "kind_exec": "arms",
+  "kind_exec": "wiki",
   "output": {
-    "adon_hakol": {
-      "error": "timeout",
-      "ms": 4001.5,
-      "ok": false,
-      "status": 0
-    },
-    "chain": "0xac1a240f→0xb9c76d99→0xb928eac6→0x0a00000f→0xa2f1f434",
-    "chain_tcp443": [
-      {
-        "arm": "arm0",
-        "hex": "0xac1a240f",
-        "ip": "172.26.36.15",
-        "tcp443": {
-          "error": "timeout",
-          "ms": 2001.1,
-          "ok": false
-        }
-      },
-      {
-        "arm": "arm1_github",
-        "hex": "0xb9c76d99",
-        "ip": "185.199.109.153",
-        "tcp443": {
-          "ms": 50.9,
-          "ok": true
-        }
-      },
-      {
-        "arm": "arm2_edge",
-        "hex": "0xb928eac6",
-        "ip": "185.40.234.198",
-        "tcp443": {
-          "ms": 60.1,
-          "ok": true
-        }
-      },
-      {
-        "arm": "arm3_underworld",
-        "hex": "0x0a00000f",
-        "ip": "10.0.0.15",
-        "tcp443": {
-          "error": "ConnectionRefusedError",
-          "ms": 42.2,
-          "ok": false
-        }
-      },
-      {
-        "arm": "arm4_adico",
-        "hex": "0xa2f1f434",
-        "ip": "162.241.244.52",
-        "tcp443": {
-          "ms": 194.2,
-          "ok": true
-        }
-      }
-    ],
-    "funnel": {
-      "backend": "http://127.0.0.1:9220",
-      "health": {
-        "bytes": 400,
-        "ms": 699.5,
-        "ok": true,
-        "status": 200
-      },
-      "michraz": {
-        "bytes": 400,
-        "ms": 754.5,
-        "ok": true,
-        "status": 200
-      },
-      "pkudah": {
-        "bytes": 400,
-        "ms": 694.6,
-        "ok": true,
-        "status": 200
-      },
-      "root": {
-        "bytes": 400,
-        "ms": 686.6,
-        "ok": true,
-        "status": 200
-      }
-    },
-    "local_ports": {
-      "57930": {
-        "ms": 0.1,
-        "name": "mozeel",
-        "ok": true
-      },
-      "57940": {
-        "ms": 0.1,
-        "name": "sherut_achud",
-        "ok": true
-      },
-      "58060": {
-        "ms": 0.1,
-        "name": "watchdog",
-        "ok": true
-      },
-      "9201": {
-        "ms": 0.1,
-        "name": "adon_hakol",
-        "ok": true
-      },
-      "9212": {
-        "ms": 0.1,
-        "name": "azm",
-        "ok": true
-      },
-      "9218": {
-        "ms": 0.1,
-        "name": "tender",
-        "ok": true
-      },
-      "9219": {
-        "ms": 0.1,
-        "name": "gesher",
-        "ok": true
-      },
-      "9220": {
-        "ms": 0.1,
-        "name": "metargem",
-        "ok": true
-      },
-      "9300": {
-        "ms": 0.1,
-        "name": "local_relay",
-        "ok": true
-      },
-      "9310": {
-        "ms": 0.1,
-        "name": "twin_host",
-        "ok": true
-      }
-    },
-    "local_relay": {
-      "bytes": 74,
-      "ms": 2002.4,
-      "ok": true,
-      "status": 200
-    },
-    "name": "tzomet_32bit_arms_health",
-    "p1_upperworld": {
-      "api": {
-        "bytes": 400,
-        "ms": 217.4,
-        "ok": true,
-        "status": 200
-      },
-      "health": {
-        "bytes": 69,
-        "ms": 227.1,
-        "ok": true,
-        "status": 200
-      }
-    },
-    "summary": {
-      "adon_health": "down",
-      "funnel": "4/4",
-      "local_tcp": "10/10",
-      "p1_upperworld": "2/2",
-      "relay_underworld": "ok",
-      "udp_9200": "ok",
-      "verdict": "green"
-    },
-    "ts": "2026-08-01T22:11:45Z",
-    "udp_9200": {
-      "ms": 0.3,
-      "ok": true,
-      "reply": "{\"ack\": true, \"msg_id\": \"health\", \"sig\": \"e6e9cf8a6de2b11e5212c6c7c3db8b5d\", \"ts\": 1785622294, \"fast_ack\": true}"
-    }
+    "mutations": 2,
+    "note": "vault unchanged until apply",
+    "ok": true,
+    "plan_sha256": "67d54fdb29001eb7819c755b0006c323940a880861d75f92b30bee0ec2157fbc",
+    "proposal": "/Users/adicohen/Projects/llm_wiki_safe/proposals/ingest_20260801T221201Z_commander-note"
   },
-  "ping_digest": "99bdff3739a5d2e178ea4be49f0e29d9d1a5258d006f8c015541bb76e44e1ee2",
-  "ping_seq": 6,
+  "ping_digest": "202493db6e8eb7899177e7c60bac9245f21b5975ef843dc4dee8bd24b5b630b2",
+  "ping_seq": 7,
   "status": "ok",
-  "ts": "2026-08-01T22:11:45Z",
+  "ts": "2026-08-01T22:12:01Z",
   "v": 1
 }
