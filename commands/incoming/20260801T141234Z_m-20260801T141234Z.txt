@@ -1,0 +1,10 @@
+# source=cli-deposit
+# deposited=2026-08-01T14:12:34.692767+00:00
+
+[חי] turn=auto | ledger=0 | drift=none | trunc=no
+```cmd
+CMD|to=zion-grok-build|id=m-20260801T141234Z|pri=normal|expect=done
+DO:
+head
+END
+```
