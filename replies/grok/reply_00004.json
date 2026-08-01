@@ -1,0 +1,26 @@
+{
+ "payload": {
+  "ai": "grok",
+  "seq": 4,
+  "host": "zion",
+  "role": "fan_in",
+  "issuer": "controller",
+  "ts": "2026-08-01T23:56:58+0300",
+  "verdict": "violations",
+  "violations": [
+   {
+    "rule": "W1",
+    "pattern": "2.5-adjacent",
+    "detail": "keep-alive header missing or malformed"
+   }
+  ],
+  "ledger_authoritative": 3,
+  "turn_claimed": null,
+  "text": "# source=cli-deposit\n# deposited=2026-08-01T14:11:40.824480+00:00\n\n```cmd\nCMD|to=zion-grok-build|id=auto-e2e-1|pri=normal|expect=state_ok\nDO:\nstate\nEND\n```\n"
+ },
+ "signature": {
+  "alg": "HMAC-SHA256",
+  "sha256": "217dd5a11a27d55ab38e0a8701e922459b24da4b6251217fe7693c595319017b",
+  "hmac": "a15b16ee44456edc80646b8ea42150baa41608aa0cc0ec26b103653f9787f273"
+ }
+}
