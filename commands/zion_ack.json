@@ -1,14 +1,14 @@
 {
-  "digest": "db6450f84104c0389fa0c6d2e939bbda3fad3ed99f254ef6bd8bcd2631a16ffb",
+  "digest": "fd98784ded48fabf66f37cd34456af19463daf1935e9892486d8d6fa3b0f66c5",
   "executor": "tzomet_zion_get",
   "host": "zion",
-  "in_reply_to": "selftest-20260801T143520Z",
+  "in_reply_to": "mobile-e2e-20260801T220033Z",
   "kind": "zion_ack",
   "kind_exec": "echo",
-  "output": "selftest-from-grok-build-20260801T143520Z",
-  "ping_digest": "5edb23a79bf37b35978c0c632be288117489207359c36332385291945a51db24",
-  "ping_seq": 4,
+  "output": "mobile-e2e-all-tasks-20260801T220033Z",
+  "ping_digest": "1335b082294a2bc1bcfce37f6a3e64f39576adfd92c2e18f364d4a7d2d1e9b66",
+  "ping_seq": 5,
   "status": "ok",
-  "ts": "2026-08-01T14:35:35Z",
+  "ts": "2026-08-01T22:01:57Z",
   "v": 1
 }
