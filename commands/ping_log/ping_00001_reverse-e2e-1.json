@@ -1,0 +1,29 @@
+{
+  "cmd": {
+    "do": "state",
+    "expect": "done",
+    "pri": "normal"
+  },
+  "digest": "c6ae3486b6a1787a0983441cc6ceb4030f6bf66ed8dc5f873077bc5a8f86ecd9",
+  "id": "reverse-e2e-1",
+  "issuer": "tzomet",
+  "kind": "zion_ping",
+  "seq": 1,
+  "shared": {
+    "get_ack": "https://raw.githubusercontent.com/adico1/tzomet-twin-relay/main/commands/zion_ack.json",
+    "get_ping": "https://raw.githubusercontent.com/adico1/tzomet-twin-relay/main/commands/zion_ping.json",
+    "protocol": "tzomet_zion_get/v1",
+    "verbs": [
+      "state",
+      "head",
+      "echo:<msg>",
+      "shell:<cmd>",
+      "run:<cmd>",
+      "!<cmd>",
+      "bakasha:<text>"
+    ]
+  },
+  "to": "zion",
+  "ts": "2026-08-01T14:17:34Z",
+  "v": 1
+}
