@@ -1,0 +1,9 @@
+# source=cli-deposit
+# deposited=2026-08-01T14:11:40.824480+00:00
+
+```cmd
+CMD|to=zion-grok-build|id=auto-e2e-1|pri=normal|expect=state_ok
+DO:
+state
+END
+```
