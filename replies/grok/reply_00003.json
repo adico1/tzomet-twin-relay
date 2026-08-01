@@ -1,0 +1,20 @@
+{
+ "payload": {
+  "ai": "grok",
+  "seq": 3,
+  "host": "zion",
+  "role": "fan_in",
+  "issuer": "controller",
+  "ts": "2026-08-01T17:07:24+0300",
+  "verdict": "clean",
+  "violations": [],
+  "ledger_authoritative": 0,
+  "turn_claimed": 1,
+  "text": "[חי] turn=1 | ledger=0 | drift=none | trunc=no\nCHECK|zion|CONNECTED|slug=x_grok|mode=mobile|mesh=echo+twin-relay|target=zion-grok-build\nCHECK|relay|READY\nhigh-water: none\nself-report bind: HEAD fetch [self-report] CHANNEL-3 until first successful poll.\nHolding for next בקשה.\n"
+ },
+ "signature": {
+  "alg": "HMAC-SHA256",
+  "sha256": "e68212a550a43826e0e62fff2e43b72883c3476a18f8275fdaffc507dd733a96",
+  "hmac": "7c803c972aef29a802de09a8630d2cae25033b7fe696906427d008b2871e2db6"
+ }
+}
