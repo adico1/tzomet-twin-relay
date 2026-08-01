@@ -591,12 +591,23 @@ def main() -> int:
         # process_issues may have already processed; always sweep incoming
         state = load_state(bus)
         results = process_incoming(repo, bus, state, push_result=True)
-        print(json.dumps({"ok": True, "processed": len(results)}, ensure_ascii=False))
+        # reverse GET mode: poll zion_ping.json
+        get_rc = _zion_get_pull(repo, bus)
+        print(
+            json.dumps(
+                {
+                    "ok": True,
+                    "processed": len(results),
+                    "zion_get_pull_rc": get_rc,
+                },
+                ensure_ascii=False,
+            )
+        )
         return 0
 
     if args.cmd == "watch":
         print(
-            f"CHECK|bridge|UP|repo={repo}|interval={args.interval}",
+            f"CHECK|bridge|UP|repo={repo}|interval={args.interval}|modes=incoming,issues,zion_get",
             flush=True,
         )
         while True:
@@ -605,11 +616,30 @@ def main() -> int:
                 process_issues(repo, bus, state, push_result=True)
                 state = load_state(bus)
                 process_incoming(repo, bus, state, push_result=True)
+                _zion_get_pull(repo, bus)
             except Exception as e:
                 print(f"CHECK|bridge|ERR|{type(e).__name__}|{e}", flush=True)
             time.sleep(max(5, args.interval))
 
     return 2
+
+
+def _zion_get_pull(repo: Path, bus: Path) -> int:
+    """Reverse mode: GET commands/zion_ping.json and execute if new seq."""
+    try:
+        import tzomet_zion_get as zget
+
+        class A:
+            pass
+
+        a = A()
+        a.repo = str(repo)
+        a.bus = str(bus)
+        a.no_relay = False
+        return int(zget.cmd_pull(a) or 0)
+    except Exception as e:
+        print(f"CHECK|bridge|zion_get|ERR|{type(e).__name__}|{e}", flush=True)
+        return 9
 
 
 if __name__ == "__main__":

@@ -82,3 +82,29 @@ Phone Grok cannot `git push` alone. Deposit is either:
 - SSH/gh from phone terminal
 
 That is **one operator action**, not Grok↔Grok paste.
+
+---
+
+## Reverse GET mode (preferred for “tell Zion what to do”)
+
+Shared contract: `commands/SHARED_UNDERSTANDING.md`  
+Tool: `tools/tzomet_zion_get.py`
+
+```sh
+# 1) Anyone publishes a ping (command for Zion)
+python3 ~/tzomet_twin_relay_repo/tools/tzomet_zion_get.py ping --do state
+
+# 2) Zion auto-GETs and runs (LaunchAgent already includes this in watch)
+python3 ~/tzomet_twin_relay_repo/tools/tzomet_zion_get.py pull
+
+# 3) Read RESULT via GET
+curl -sS 'https://api.github.com/repos/adico1/tzomet-twin-relay/contents/commands/zion_ack.json?ref=main'
+```
+
+GET ping (command):  
+https://raw.githubusercontent.com/adico1/tzomet-twin-relay/main/commands/zion_ping.json  
+
+GET ack (result):  
+https://raw.githubusercontent.com/adico1/tzomet-twin-relay/main/commands/zion_ack.json  
+
+Same verbs: `state` · `head` · `echo:…` · `shell:…` · `run:…` · `bakasha:…`
