@@ -1,0 +1,33 @@
+{
+  "id": "auto-e2e-1",
+  "to": "zion-grok-build",
+  "pri": "normal",
+  "expect": "state_ok",
+  "status": "ok",
+  "kind": "state",
+  "output": {
+    "last_fname": "msg_00004.json",
+    "last_sha256": "0cd416f164a9280cb00e785f0d328f80cee9964cc6380c7a56f2e84ff184d83b",
+    "processed": {
+      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T140112Z_ping.txt": {
+        "seq": 3,
+        "sha256": "ec151b982b18ee0d7e668c75cfe4b81d18d949495cde833019f0684f63ad9670"
+      },
+      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T140724Z_ack_x_grok.txt": {
+        "seq": 4,
+        "sha256": "0cd416f164a9280cb00e785f0d328f80cee9964cc6380c7a56f2e84ff184d83b"
+      },
+      "/Users/adicohen/tzomet_bus/outbox/all/connect_mesh.txt": {
+        "seq": 2,
+        "sha256": "7fb76875debd7b8dfa7db9e83ceda16f614f212dc4444cf58546c46fd1cd6e2c"
+      },
+      "/Users/adicohen/tzomet_bus/outbox/all/m1.txt": {
+        "seq": 1,
+        "sha256": "402eb1b0b6a280785c5289b24c6bd9567ebc0dd03c4e0a5f3d872be546e54406"
+      }
+    },
+    "seq": 4
+  },
+  "ts": "2026-08-01T14:11:43.756108+00:00",
+  "source_file": "commands/incoming/20260801T141140Z_auto-e2e-1.txt"
+}
