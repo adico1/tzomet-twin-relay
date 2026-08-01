@@ -1,44 +1,18 @@
 {
-  "digest": "56391f2ec8d2a01bd9c2eeb2b57ebec68fd943dac0462c54568fab529dbbd4b3",
+  "digest": "3aa5def7110cadf211e251ac9007320450b201720e1e880a4ec7f84582d8c0b8",
   "executor": "tzomet_zion_get",
   "host": "zion",
-  "in_reply_to": "reverse-e2e-1",
+  "in_reply_to": "reverse-e2e-2",
   "kind": "zion_ack",
-  "kind_exec": "state",
+  "kind_exec": "head",
   "output": {
-    "last_fname": "msg_00006.json",
-    "last_sha256": "2ba2c5531c95b1790628b32ea0b50955bcb0056558919bfb48867068ac476562",
-    "processed": {
-      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T140112Z_ping.txt": {
-        "seq": 3,
-        "sha256": "ec151b982b18ee0d7e668c75cfe4b81d18d949495cde833019f0684f63ad9670"
-      },
-      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T140724Z_ack_x_grok.txt": {
-        "seq": 4,
-        "sha256": "0cd416f164a9280cb00e785f0d328f80cee9964cc6380c7a56f2e84ff184d83b"
-      },
-      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T141143Z_bridge.txt": {
-        "seq": 5,
-        "sha256": "b1e423bb66e687b6f26c2d3b46d32945f13105203a09aa7dca7a5d25eaf685ad"
-      },
-      "/Users/adicohen/tzomet_bus/outbox/all/bakasha_20260801T141247Z_bridge.txt": {
-        "seq": 6,
-        "sha256": "2ba2c5531c95b1790628b32ea0b50955bcb0056558919bfb48867068ac476562"
-      },
-      "/Users/adicohen/tzomet_bus/outbox/all/connect_mesh.txt": {
-        "seq": 2,
-        "sha256": "7fb76875debd7b8dfa7db9e83ceda16f614f212dc4444cf58546c46fd1cd6e2c"
-      },
-      "/Users/adicohen/tzomet_bus/outbox/all/m1.txt": {
-        "seq": 1,
-        "sha256": "402eb1b0b6a280785c5289b24c6bd9567ebc0dd03c4e0a5f3d872be546e54406"
-      }
-    },
-    "seq": 6
+    "aligned": true,
+    "local": "msg_00007.json",
+    "public": "msg_00007.json"
   },
-  "ping_digest": "c6ae3486b6a1787a0983441cc6ceb4030f6bf66ed8dc5f873077bc5a8f86ecd9",
-  "ping_seq": 1,
+  "ping_digest": "f47348ca19182f17e50907bbe283a52d3bb32a7ef0ab196827bd070aee4eb707",
+  "ping_seq": 2,
   "status": "ok",
-  "ts": "2026-08-01T14:17:36Z",
+  "ts": "2026-08-01T14:18:14Z",
   "v": 1
 }
