@@ -1,20 +1,14 @@
 {
-  "digest": "cb291805137df7b3f95525c98b66c0a134f2842aa1b5280e9c00ef3773ce6cbf",
+  "digest": "c62eb74b4a0569e5ac9bd26c3fc5585d2d38b9d351cc6b7d684d68f6dc7e3b7f",
   "executor": "tzomet_zion_get",
   "host": "zion",
-  "in_reply_to": "ping-20260801T221149Z",
+  "in_reply_to": "ping-20260802T134742Z",
   "kind": "zion_ack",
-  "kind_exec": "wiki",
-  "output": {
-    "mutations": 2,
-    "note": "vault unchanged until apply",
-    "ok": true,
-    "plan_sha256": "67d54fdb29001eb7819c755b0006c323940a880861d75f92b30bee0ec2157fbc",
-    "proposal": "/Users/adicohen/Projects/llm_wiki_safe/proposals/ingest_20260801T221201Z_commander-note"
-  },
-  "ping_digest": "202493db6e8eb7899177e7c60bac9245f21b5975ef843dc4dee8bd24b5b630b2",
-  "ping_seq": 7,
+  "kind_exec": "echo",
+  "output": "e2e-from-deposit",
+  "ping_digest": "47c1a13ddca601e173e0270595dfad43987329ca5fb553998ddbe22b7ff7100c",
+  "ping_seq": 8,
   "status": "ok",
-  "ts": "2026-08-01T22:12:01Z",
+  "ts": "2026-08-02T13:47:55Z",
   "v": 1
 }
